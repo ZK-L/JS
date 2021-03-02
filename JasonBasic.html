@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jason Basic</title>
+    <style>
+        img{
+            max-width: 100px;
+            max-height: 200px;
+        }
+        li{
+            border: 3px solid red;
+            width: 25%;
+            height: 220px;
+        }
+        ul{
+            border: 3px solid green;
+            width: 1024;
+            float: left;
+            direction: ltr;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <header>
+            hello
+        </header>
+    </div>
+    <ul id="items"></ul>
+</body>
+<script>
+    let items = document.getElementById("items");
+    let requestURL = "baking.json";//'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json';
+    let request = new XMLHttpRequest();
+    request.open("GET", requestURL);
+    request.responseType = "json";
+    request.send();
+    
+    /*    <!-- request.onload = function(){
+        const superHeroes = request.response;
+        console.log(superHeroes[0]);
+        /*let content = document.createElement("p");
+        content.textContent = JSON.stringify(superHeroes);
+        document.body.appendChild(content);
+        */
+        /*      for (let i = 0; i< superHeroes.length; i++){
+            let item = superHeroes[i];
+            let name = item.name;
+            let price = "$ "+item.price;
+            let img = "http://www.bigw.com.au"+item.image;
+            
+            nameTag.textContent = name;
+            priceTag.textContent = price;
+            itemLi.appendChild(nameTag);
+            // itmeLi.appendChild(priceTag);
+            //   items.appendChild(itmeLi);
+            
+        }
+    } */
+    fetch(requestURL)
+    .then((response)=>{
+        return response.json();
+    })
+    .then((data)=>{
+        for (let i = 0; i< data.length; i++){
+            let priceTag = document.createElement("p");
+            let itemLi = document.createElement("div");
+            let nameTag = document.createElement("p");
+            let imgSrc = document.createElement("img");
+            let item = data[i];
+            let name = item.name;
+            let price = "$ "+item.price;
+            let img = "http://www.bigw.com.au"+item.image;
+            imgSrc.setAttribute("src",img);
+            nameTag.textContent = name;
+            priceTag.textContent = price;
+            itemLi.appendChild(nameTag);
+            itemLi.appendChild(imgSrc);
+            itemLi.appendChild(priceTag);
+            items.appendChild(itemLi);
+        }
+    })
+    .catch((e)=>{
+        console.log(e);
+    });
+
+</script>
+</html>

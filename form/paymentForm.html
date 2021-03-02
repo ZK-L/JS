@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment form
+    </title>
+    <link rel="shortcut icon" href="coffee.jpg">
+    <link rel="stylesheet" href="paymentStyle.css">
+</head>
+
+<body>
+    <form>
+        <legend class="payment">Payment form</legend>
+        <p>Required fields are followed by <abbr title="required">*</abbr></p>
+        <legend class="payment"> contact information</legend>
+        <fieldset class="title">
+            <legend> Title</legend>
+            <ul>
+                <li>
+                    <input type="radio" name="ace" id="title-ace">
+                    <label for="ace"> Ace</label>
+                </li>
+                <li>
+                    <input type="radio" name="king" id="title-king">
+                    <label for="king"> King</label>
+                </li>
+                <li>
+                    <input type="radio" name="queen" id="title-queen">
+                    <label for="queen"> Queen</label>
+                </li>
+            </ul>
+        </fieldset>
+        <div class="personalInfo">
+            <ul>
+                <li>
+
+                    <label for="name"> Name <abbr title="required">*</abbr></label>
+                    <input type="text" id="name">
+                </li>
+                <li>
+
+                    <label for="email"> E-mail <abbr title="required">*</abbr></label>
+                    <input type="email" id="email">
+                </li>
+                <li>
+
+                    <label for="password"> Password <abbr title="required">*</abbr></label>
+                    <input type="password" id="password">
+                </li>
+            </ul>
+
+        </div>
+
+        <legend class="payment"></legend>
+        <div class="card">
+            <ul>
+<li>
+
+    <label for="cardType"> Card type:</label>
+    <select name="cardType" id="cardType">
+                </li>
+                
+                <option value="visa">Visa</option>
+                <option value="mastercard"> Mastercard</option>
+                <option value="express">American Express</option>
+            </select>
+            <li>
+                <label for="cardNum">Card number: <abbr title="required">*</abbr></label>
+                <input type="tel" maxlength="19" pattern = "[0-9\-]*" required >
+            </li>
+            <li>
+
+                <label for="expDate">Expiration date: <abbr title="required">*</abbr></label>
+                <input type="month" name="expDate" id="expDate" required>
+            </li>
+            </ul>
+        </div>
+
+
+    </form>
+
+</body>
+
+</html>

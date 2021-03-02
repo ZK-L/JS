@@ -1,0 +1,71 @@
+body{
+    min-width: 400px;
+    max-width: 512px;
+    width: 70%;
+    margin: auto;
+}
+form{
+    border: 2px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    align-items: flex-start;
+}
+
+
+.payment{
+    font-size: 20px;
+    font-weight: 700;
+    padding: 0px;
+}
+form p{
+    font-size: 10px;
+    font: italic;
+    flex: 1 1 auto;
+}
+
+.title{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 200px;
+}
+
+.title ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.personalInfo{
+   margin:10px 0px 10px 0px; 
+}
+.personalInfo ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    
+}
+.personalInfo label{
+    display: inline-block;
+    width: 80px;
+    margin-block: 5px;
+}
+
+
+.card{
+   margin:10px 0px 10px 0px; 
+}
+.card ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    
+}
+.card label{
+    display: inline-block;
+    width: 120px;
+}
+
+li{
+    margin: 10px 0px 0px 5px;
+}

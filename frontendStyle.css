@@ -1,0 +1,171 @@
+body{
+    font-family: "PT Mono", monospace;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.1);
+    min-width: 700px;
+}
+
+
+header, h1,p,pre, .video{
+    margin: 10px auto;
+    width: 80%;
+    padding: 10px;
+}
+
+.header, .header p{
+    font-size: 60px;
+    background-color: azure;
+    margin: 0px;
+}
+.header{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.header p{
+    flex: 0 1 auto;
+    text-align: center;
+
+}
+
+.header img{
+    flex: 0 auto;
+    height: 100px;
+    margin-right: 50px;
+}
+.main{
+    margin-bottom: 60px;
+}
+
+.video{
+    text-align: center;
+}
+
+h1{
+    font-size: 14px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+header{
+    font-size: 25px;
+    font-weight: 700;
+    border-bottom: 2px solid lightgray;
+}
+nav{
+    padding: 0px;
+    margin: 0px;
+    background-color: lightgray;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    margin: 0 auto;
+}
+
+nav ul li{
+    padding: 10px;
+    text-align: center;
+}
+
+nav ul li:hover{
+    background-color: green;
+}
+
+nav ul li:active{
+    background-color: green;
+}
+.sticky{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.nav.link{
+    text-decoration: none;
+    color: black;
+
+}
+
+.anchor{
+    position: relative;
+    top: -70px;
+}
+
+pre{
+    background-color: lightgray;
+    border-left: 2px solid blue;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+
+.footer{
+    width: 100%;
+    height: 100px;
+    background-color: rgb(95, 99, 104);
+    margin: 0px;
+    padding: 0px;
+    color: white;
+}
+
+.footer p{
+    width: 90%;
+    margin: 10px;
+    padding: 20px;
+}
+
+
+.image-gallery{
+    width: 80%;
+    padding: 0px;
+    display: flex;
+    flex-flow: row wrap;
+    background-color: white;
+    margin: auto;
+}
+
+.image-thumb{
+    width: 30%;
+    padding: 0px;
+    margin: 15px auto;
+    text-align: center;
+
+}
+
+.image-thumb img{
+    display: block;
+    padding: 0px;
+    margin: 0px auto;
+    width: 95%;
+}
+
+.nameTag,.priceTag{
+    margin: 0px auto;
+    text-align: center;
+    display: block;
+    }
+
+.nameTag{
+    font-size: 14px;
+    height: 30px;
+}
+
+.priceTag{
+    font-weight: 700;
+}
+
+.shoppingBtn{
+    margin: auto;
+    width: 60%;
+}
+
+
+.shoppingBtn:hover{
+    cursor: pointer;
+}
+

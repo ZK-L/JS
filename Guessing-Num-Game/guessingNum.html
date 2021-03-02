@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <script src="guessingNum.js" defer></script>
+        <title>Number Guessing game</title>
+        <style>
+            .msgBox {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%,-50%);
+              width: 200px;
+              background: lightgray;
+            }
+      
+            .msgBox p {
+              line-height: 1.5;
+              padding: 10px 20px;
+              color: black;
+            }
+      
+            .msgBox button {
+              background: none;
+              border: none;
+              position: absolute;
+              top: 0;
+              right: 0;
+              font-size: 1.1rem;
+              color: #aaa;
+            }
+      
+          </style>
+    </head>
+    <body style="text-align: left;">
+        <b><big>Number Guessing game</big></b>
+        <p>We have selected a random number between 1 and 100. See if you can guess it in 10 turns or fewer. We'll tell you if your guess was too high or too low.</p>
+        <p>Enter a guess: <input id="numInput" type="number">
+        <button id="submit">submit(10)</button>
+        </p>
+        <p id="previous"></p>
+        <p id="rightOrWrong" style="color: white;padding: 3px;background-color: white"></p>
+        <p id="LH"></p>
+
+        <button id="click">click me</button>
+        <br>
+        <button id="show"> show the panel</button>
+        <script>
+            const html = document.querySelector("html");
+            function displayMsg(){
+                const panel = document.createElement("div");
+                panel.setAttribute("class", "msgBox");
+                html.appendChild(panel);
+                
+                const msg = document.createElement("p");
+                msg.textContent = "This is a message box";
+                panel.appendChild(msg);
+
+                const closeBtn = document.createElement("button");
+                closeBtn.textContent = "x";
+                panel.appendChild(closeBtn);
+
+                closeBtn.onclick = function(){
+                    panel.parentNode.removeChild(panel);
+                }
+            }
+            let para = document.getElementById("show");
+            para.onclick=displayMsg;
+        </script>
+    </body>
+</html>

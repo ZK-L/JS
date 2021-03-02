@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"> 
+        <title>event listener test</title>
+        <style>
+            div{
+                background-color: red;
+                height: 100px;
+                width: 25%;
+                float: left;
+            }
+        </style>
+        <script src="event.js" defer></script>
+    </head>
+    <body>
+        <header><b>Hello</b></header>
+        <p>try to click any where below</p>
+        <script>
+            for (let i = 0;i<16;i++){
+                let para = document.createElement("div");
+                document.body.appendChild(para);
+            }
+
+            function randomNum(number){
+                return Math.floor(Math.random()*number);
+            }
+
+            function changeBg(){
+                const color = "rgb(" + randomNum(255) + "," + randomNum(255) + "," + randomNum(255) + ")";
+                return color;
+            }
+
+            const divs = document.querySelectorAll("div");
+            divs.forEach(function (e){
+                e.onclick= function(e){
+                    e.target.style.backgroundColor = changeBg()}});
+
+        </script>
+
+        <br>
+        <form>
+        <label for="lname">Last Name:</label>
+        <input type="text" id="lname">
+        <br>
+        <label for="fname">First Name:</label>
+        <input type="text" id="fname">
+        <br>
+        <input type="submit" id="submit">
+        <p id="alert">tetee</p>
+        </form>
+    </body>
+
+</html>

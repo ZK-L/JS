@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StopWatch</title>
+
+    <style>
+        .timeCounter{
+            font-size: 80px;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+        .menuBar{
+            margin: auto;
+            border: 3px solid green;
+            width: 50%;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        .button{
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="menuBar">
+        <button class="button" id="start">start</button>
+        <button class="button" id="stop" disabled>stop</button>
+        <button class="button" id="reset">reset</button>
+    </div>
+    <div class="menuBar">
+        <p class = "timeCounter">00:00:00</p>
+    </div>
+    <script>
+        const time = document.querySelector(".timeCounter");
+        const start = document.getElementById("start");
+        const stop = document.getElementById("stop");
+        const reset = document.getElementById("reset");
+        let updateInterval;
+         
+        console.log(Number(time.textContent.split(":")[0]));
+        start.onclick = ()=>{
+            stop.disabled = false;
+            start.disabled = true;
+            updateInterval = setInterval(updateTime, 1000);
+        }
+        function updateTime(){
+            let currentTime = time.textContent.split(":");
+            let hr = Number(currentTime[0]);
+            let min = Number(currentTime[1]);
+            let se = Number(currentTime[2]);
+
+            (se === 59)? se = 0 &( min += 1):se += 1;
+            if (min === 60){
+                min = 0;
+                hr += 1;
+            }
+
+            let timeStr = [String(hr), String(min), String(se)];
+            for (let i = 0; i < timeStr.length; i++){
+                if (timeStr[i].length===1){
+                    timeStr[i] = "0" + timeStr[i];
+                }
+            }
+            time.textContent = timeStr[0] + ":" + timeStr[1] + ":" +timeStr[2];
+        }
+
+        stop.onclick = ()=>{
+            clearInterval(updateInterval);
+            stop.disabled = true;
+            start.disabled = false;
+        }
+
+        reset.onclick = ()=>{
+            clearInterval(updateInterval);
+            stop.disabled = true;
+            start.disabled = false;
+            time.textContent = "00:00:00";
+        }
+
+    </script>
+</body>
+</html>

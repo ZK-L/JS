@@ -1,0 +1,45 @@
+
+.titleBar{
+    border: 3px solid green;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    margin: auto;
+    margin-top: 20px;
+    min-width: 512px;
+}
+
+.title{
+    margin: auto;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 10px;
+    font: bolder;
+}
+
+.inputBar{
+    margin: auto;
+    text-align: center;
+    margin-block: 20px;
+}
+
+.shoppingItem{
+    margin: auto;
+    min-width: 512px;
+    margin-top: 10px;
+}
+
+.item{
+    margin: auto;
+    margin-block: 10px;
+    width: 300px;
+    text-align: left;
+ 
+}
+
+.itemName{
+    display:inline-block;
+    width: 200px;
+    margin-right: 20px;
+    font-size: 20px; 
+}
