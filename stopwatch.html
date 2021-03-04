@@ -23,6 +23,14 @@
             margin-right: auto;
             font-size: 3rem;
         }
+
+        .spinner{
+            width: fit-content;
+            margin: auto;
+            font-size: 100px;
+            text-align: center;
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -34,6 +42,9 @@
     <div class="menuBar">
         <p class = "timeCounter">00:00:00</p>
     </div>
+
+    <div class="spinner"> ↻</div>
+
     <script>
         const time = document.querySelector(".timeCounter");
         const start = document.getElementById("start");
@@ -46,6 +57,7 @@
             stop.disabled = false;
             start.disabled = true;
             updateInterval = setInterval(updateTime, 1000);
+            draw();
         }
         function updateTime(){
             let currentTime = time.textContent.split(":");
@@ -72,6 +84,8 @@
             clearInterval(updateInterval);
             stop.disabled = true;
             start.disabled = false;
+            cancelAnimationFrame(rAF);
+            startTime = null;
         }
 
         reset.onclick = ()=>{
@@ -80,6 +94,23 @@
             start.disabled = false;
             time.textContent = "00:00:00";
         }
+
+        const spinner = document.querySelector(".spinner");
+        let startTime = null;
+        let rotateCount = 0;
+        let rAF;
+        function draw(timestamp) {
+            if(!startTime) {
+             startTime = timestamp;
+            }
+            rotateCount = (timestamp - startTime)/5 ;
+            if(rotateCount > 359) {
+              rotateCount %= 360;
+            }
+            spinner.style.transform = 'rotate(' + rotateCount + 'deg)';
+            rAF = requestAnimationFrame(draw);
+          }
+    
 
     </script>
 </body>
